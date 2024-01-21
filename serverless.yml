@@ -1,0 +1,14 @@
+service: animeScrapper
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  scrapeEpisodeLinks:
+    handler: index.handler
+    events:
+      - http:
+          path: /scrape
+          method: any
